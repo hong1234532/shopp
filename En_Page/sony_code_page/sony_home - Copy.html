@@ -1,0 +1,571 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tech</title>
+</head>
+	<style>
+		body{
+			margin-left: 300px;
+			margin-right: 300px;
+		}
+		.smoke{
+			position: absolute;
+			margin-top: 30px;
+			margin-left:30%;
+			transform: translate(-30%,-30%);
+			cursor: pointer;
+		}
+		
+		.smoke span{
+			position: relative;
+			font-family: sans-serif;
+			font-weight: bold;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			font-size: 30px;
+			animation: glow 3s ease-in-out infinite;
+			animation-delay: var(--delay);
+		}
+		.smoke span:nth-child(1){
+			animation-delay:0s;
+		}
+		.smoke span:nth-child(2){
+			animation-delay:0.25s;
+		}
+		.smoke span:nth-child(3){
+			animation-delay:0.5s;
+		
+		}
+		.smoke span:nth-child(4){
+			animation-delay:0.75s;
+		}
+		.smoke span:nth-child(5){
+			animation-delay:1s;
+		}
+		.smoke span:nth-child(6){
+			animation-delay:1.25s;
+			
+		}
+		.smoke span:nth-child(7){
+			animation-delay:1.5s;
+		}
+		@keyframes glow{
+			30%,
+			100%{
+				color: var(--color);
+				text-shadow:0 0 20px #0652dd,0 0 20px #0652dd;
+			}
+			40%,
+			90%{
+				color:#ebeef1;
+				text-shadow: none;
+			}
+		}
+		
+		.main{
+			width: 100%;
+			background-position: center;
+			background-color: #ebeef1;
+			background-size: cover;
+			height: 70px;
+			box-shadow: 10px 10px 8px -8px rgba(15, 95,174,0.20),-10px -10px 8px -8px rgba(255,255,255,0.70);
+			border-radius: 20px;
+			margin-top: 20px;
+		
+		}
+		.main{
+			box-shadow: 10px 10px 8px -8px rgba(10, 90,169,0.16),-10px -10px 8px -8px rgba(255,255,255,0.70);
+		
+		}
+		.navbar{
+			position: relative;
+			height: 75px;
+			width: 1200px;
+			margin: auto;
+		}
+		.icon{
+			height: 70px;
+			width: 200px;
+			float: left;
+		}
+		ul{
+			float: left;
+			justify-content: center;
+			display: flex;
+			align-items: center;
+		}
+		ul li{
+			list-style: none;
+			margin-left: 30px;
+			margin-top: 10px;
+			font-size: 16px;
+			text-decoration: none;
+			font-family: Arial;
+			font-weight: bold;
+			color: white;
+			position: relative;
+		}
+		ul li a{
+			text-decoration: none;
+			color:black;
+		}
+		.manu{
+			height: 70px;
+			float: right;
+			margin-right: 100px;
+			cursor: pointer;	
+		}
+		 .manu ul li::after{
+			height: 3px;
+			content: '';
+			width: 0;
+			background:#009688; 
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			 transition: 0.5s;
+		}
+		.manu ul li:hover::after{
+			width: 100%;
+			
+		}
+		.logo{
+			margin-left: 30px;
+			margin-top: 5px;
+		}
+		.product_logo{
+			justify-content: space-evenly;
+			align-items: center;
+			display: flex;
+			margin-top: 100px;
+		}
+		.product_logo{
+			box-shadow: inset 10px 10px 8px -8px rgba(10, 90,169,0.16),inset -10px -10px 8px -8px rgba(255,255,255,0.70);
+			height: 80px;
+			width: 100%;
+			border-radius: 30px;
+			animation: 
+			
+		}
+		.product_logo a img:hover{
+			transform: scale(3);
+		}
+		.main_product{
+			display:grid;
+			grid-template-columns: repeat(auto-fit, minmax(10px, auto));
+			grid-gap: 3rem;
+			align-items: flex-end;
+			margin-top: 40px;
+		}
+		.box{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			box-shadow: 10px 10px 8px -8px rgba(10, 90,169,0.16),-10px -10px 8px -8px rgba(255,255,255,0.70);
+			padding: auto;
+/*			margin-top: 5rem;*/
+			height: 355px;
+			width: 200px;
+			border-radius: 10px;
+			justify-content: space-between;
+		}
+		
+		.box_img{
+			text-align: center;
+			justify-content: flex-end;
+			margin-top: 30px;
+			
+		}
+		.box:hover{
+			transform: scale(1.05);
+		}
+		.footer{
+			margin-top: 100px;
+			justify-content: space-around;
+			align-items: center;
+			display: flex;
+		}
+		.footer{
+			align-items: flex-start;
+			background-color:black;
+			color: white;
+			
+		}
+		.footer p{
+			line-height: 30px;
+		}
+		.button{	
+			width: 160px;
+			font-size: 22px;
+			font-weight: 50px;
+			padding: 2px;
+			margin-bottom: 20px;
+			background: #ebeef1;
+			cursor: pointer;
+			border-radius: 50px;
+			color: red;
+			box-shadow: 10px 10px 8px -8px rgba(10, 90,169,0.16),-10px -10px 8px -8px rgba(260,260,260,0.75);
+		}
+		.kh_en:hover{
+			transform: scale(1.2);
+		}
+		.h1{
+			font-size: 12px;
+			text-align: center;
+		}
+/*
+		.button{
+			margin-left: 50px;
+		}
+*/
+		.button:hover{
+			transform: scale(1.1)
+		}
+		.margin{
+			margin-top: 47px;
+		}
+		.a{
+			 text-decoration: none;
+		}
+/*
+		#center{
+			margin-top: 95px;
+		}
+*/
+		#v1{
+			margin-top: 50px;
+		}
+		#v2{
+			margin-top: 43px;
+		}
+/*
+		#v3{
+			margin-top: 70px;
+		}
+*/
+		.h_1{
+			margin-top: 60px;
+		}
+				.margin_1{
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			margin-top: 40px;
+		}
+			
+	</style>
+
+<body marginwidth="50px" style="background-color:#ebeef1">
+	<div class="main">
+		<div class="navbar">
+			<div class="icon">
+				<h2 class="logo"><a href="../../Home_page_En.html"><img src="../../Image_Page/logo.png" width="120px"></a></h2>
+			</div>
+			<div class="smoke">
+				<span style="color: #FF00FF;">W</span>
+				<span style="color: #da4167;">E</span>
+				<span style="color: #F2A2E8;">L</span>
+				<span style="color: #7F38EC;">C</span>
+				<span style="color: #c589e8;">O</span>
+				<span style="color: #C71585;">M</span>
+				<span style="color: #FF007F;">E</span>
+			</div>
+			<div class="manu">
+				<ul>
+					<li><a href="../../Home_page_En.html">HOME</a></li>
+					<li><a href="../../../Web_Design_Final/En_Page/about.html">ABOUT</a></li>
+					<li><a href="../../../Web_Design_Final/En_Page/service.html">SERVICE</a></li>
+					<li><a href="../../../Web_Design_Final/En_Page/contact.html">CONTACT</a></li>
+					<li class="kh_en"><a hreflang="#"><img src="../../Image_Page/en.gif" width="30px"> </a></li>
+					<li class="kh_en"><a href="../../Kh_Page/sony kh/1.html"><img src="../../Image_Page/km.gif" width="30px"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="center_logo">
+	<div class="product_logo">
+		<span style="font-size: 30px;font-family: arial;font-style: italic;cursor: pointer;text-decoration: none"><strong>Brands Logo</strong></span>
+		<a href="../../En_Page/toshiba_code_page/TS_Home.html"><img src="../../Image_Page/toshiba.png" width="55"></a>
+		<a href="../../En_Page/sony_code_page/sony_home - Copy.html"><img src="../../Image_Page/sony.png" width="100"></a>
+		<a href="../../En_Page/samsung_code_page/Sam_home.html"><img src="../../Image_Page/samsung_logo.png" width="55" ></a>
+		<a href="../../En_Page/lg_code_page/LG_home.html"><img src="../../Image_Page/Untitled-2.png" width="55" ></a>
+		<a href="../../En_Page/panasonic_code_page/Pa_Home.html"><img src="../../Image_Page/Panasonic.png" width="55"></a>
+		
+	</div>
+		</div>
+<!--	Samsung-->
+	<div class="margin_1">
+			<a href="../../En_Page/sony_code_page/sony_home - Copy.html"><img src="../../Image_Page/sony!.png" width="300px"></a>
+	</div>
+		<div class="main_product">
+		<div class="box">
+			<div class="box_img">
+				<a href="1.html">
+					<img src="../../Image_Page/sony/Sony WH-CH720N Noise Canceling Wireless Headphones Bluetooth Over The Ear.png" style="max-width: 50%">
+				</a>
+				
+			</div>
+				<p class="h1"  style="text-transform: uppercase; margin-top: 70px">Sony Extra Bass XB60 Bluetooth Speaker</p>
+				<a class="a" href="../../En_Page/sony_code_page/1.html">
+					<h2 class="button text" style="text-align: center;">$115,00</h2>
+				</a>
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="DU.html">
+					<img src="../../Image_Page/sony/Sony WH-CH520 Wireless Headphones Bluetooth On-Ear.png" width="100px">
+				</a>
+			</div>
+			<p class="h1" id="center" style="margin-top: 45px ;text-transform: uppercase">INZONE H9 Wireless Noise Canceling Gaming Headset</p>
+				<a class="a" href="../../En_Page/sony_code_page/IN.html">
+					<h1  class="button" style="text-align: center;">$90.00</h1>
+				</a>
+				
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="IN.html">
+					<img src="../../Image_Page/sony/Sony WH-1000XM4 Wireless Noise-Canceling Headphones.jpg.png" width="110px">
+				</a>
+			</div>
+			<p class="h1" style="text-transform: uppercase; margin-top: 20px">Sony WH-1000XM4 Wireless Premium Noise</p>
+				<a class="a" href="../../En_Page/sony_code_page/WH.html">
+					<h2 class="button " style="text-align: center">$200.00</h2>
+			</a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="WH.html">
+					<img src="../../Image_Page/sony/Sony WH-1000XM5 Wireless Noise-Canceling Headphones.jpg.png" width="110px">
+				</a>
+			</div>
+				<p class="h1" style="../../margin-top: 20px; text-transform: uppercase">PlayStation 4 500GB Console (Renewed)</p>
+				<a class="a" href="../../En_Page/sony_code_page/WH.html">
+					<h2 class="button" style="text-align: center">$399.00</h2>
+				</a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="WH_.html">
+					<img src="../../Image_Page/sony/Sony DualSense Wireless Controller.webp" style="max-width: 90%; margin-top: 34px">
+				</a>
+			</div>
+				<p class="h1" style="../../margin-top: 80px; text-transform: uppercase">Sony PlayStation® DualSense™ </p>
+				<a class="a" href="../../En_Page/sony_code_page/DU.html">
+					<h2 class="button" style="text-align: center">$120.00</h2>
+				</a>
+<!--			write price here-->
+		</div>
+	</div>
+	<div class="main_product">
+		<div class="box">
+			<div class="box_img">
+				<a href="" >
+					<img src="../../Image_Page/sony/EXTRA BASS™ Series.png" style="max-width: 30%">
+				</a>
+				
+			</div>
+				<p class="h1"  style="text-transform: uppercase; margin-top: 70px">Sony Extra Bass XB60 Bluetooth Speaker</p>
+				<a class="a" href=""><h2 class="button text" style="text-align: center;">$30,00</h2></a>
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Manuals for ICF-C218.png" width="150px">
+				</a>
+			</div>
+			<p class="h1" id="center" style="margin-top: 45px ;text-transform: uppercase">XB32 EXTRA BASS™ Portable Wireless Speaker</p>
+				<a class="a" href=""><h1  class="button" style="text-align: center;">$299.00</h1></a>
+				
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony Alpha 1 Full-Frame Mirrorless Camera.webp" width="130px">
+				</a>
+			</div>
+			<p class="h1" style="text-transform: uppercase; margin-top: 20px">Sony Alpha 1 Full-frame Interchangeable Lens</p>
+				<a class="a" href=""><h2 class="button " style="text-align: center">$283.00</h2></a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony BRAVIA XR TVs for Gaming.png" width="130px">
+				</a>
+			</div>
+				<p class="h1" style="margin-top: 20px; text-transform: uppercase">PlayStation 4 500GB Console (Renewed)</p>
+				<a class="a" href=""><h2 class="button" style="text-align: center">$589.00</h2></a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony expands its Extra Bass headphone and speaker line.png" style="max-width: 50%; margin-top: 34px">
+				</a>
+			</div>
+				<p class="h1" style="margin-top: 80px; text-transform: uppercase">Sony PlayStation® DualSense™ </p>
+				<a class="a" href=""><h2 class="button" style="text-align: center">$3,875.00</h2></a>
+<!--			write price here-->
+		</div>
+	</div>
+	<div class="main_product">
+		<div class="box">
+			<div class="box_img">
+				<a href="" >
+					<img src="../../Image_Page/sony/Sony LinkBuds S Truly Wireless Earbuds.jpg.png" style="max-width: 90%">
+				</a>
+				
+			</div>
+				<p class="h1"  style="text-transform: uppercase; margin-top: 70px">Sony Extra Bass XB60 Bluetooth Speaker</p>
+				<a class="a" href=""><h2 class="button text" style="text-align: center;">$249,00</h2></a>
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony PlayStation 4 Console.jpg" width="150px">
+				</a>
+			</div>
+			<p class="h1" id="center" style="margin-top: 45px ;text-transform: uppercase">XB32 EXTRA BASS™ Portable Wireless Speaker</p>
+				<a class="a" href=""><h1  class="button" style="text-align: center;">$299.00</h1></a>
+				
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony PlayStation 5 Console.webp" width="130px">
+				</a>
+			</div>
+			<p class="h1" style="text-transform: uppercase; margin-top: 20px">Sony Alpha 1 Full-frame Interchangeable Lens</p>
+				<a class="a" href=""><h2 class="button " style="text-align: center">$283.00</h2></a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony PlayStation Camera.webp" width="130px">
+				</a>
+			</div>
+				<p class="h1" style="margin-top: 20px; text-transform: uppercase">PlayStation 4 500GB Console (Renewed)</p>
+				<a class="a" href=""><h2 class="button" style="text-align: center">$589.00</h2></a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony XAV-AX4000 7-Inch Multimedia Receiver with Wireless Car.png" style="max-width: 45%; margin-top: 34px">
+				</a>
+			</div>
+				<p class="h1" style="margin-top: 80px; text-transform: uppercase">Sony XAV-AX4000 7-Inch Multimedia Receiver with Wireless Car </p>
+				<a class="a" href=""><h2 class="button" style="text-align: center">$3,875.00</h2></a>
+<!--			write price here-->
+		</div>
+	</div>
+	<div class="main_product">
+		<div class="box">
+			<div class="box_img">
+				<a href="" >
+					<img src="../../Image_Page/sony/Sony ICD-TX660 - Slim Digital Voice Recorder with OLED Display.jpg" style="max-width: 10%">
+				</a>
+				
+			</div>
+				<p class="h1"  style="text-transform: uppercase; margin-top: 70px">Sony Extra Bass XB60 Bluetooth Speaker</p>
+				<a class="a" href=""><h2 class="button text" style="text-align: center;">$249,00</h2></a>
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony PS-LX310BT Belt Drive Turntable.jpg.png" width="150px">
+				</a>
+			</div>
+			<p class="h1" id="center" style="margin-top: 45px ;text-transform: uppercase">Sony PS-LX310BT Belt Drive Turntable.jpg</p>
+				<a class="a" href=""><h1  class="button" style="text-align: center;">$299.00</h1></a>
+				
+<!--			write price here-->
+		</div>
+		<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Ultra HD Blu-ray Sony.png" width="130px">
+				</a>
+			</div>
+			<p class="h1" style="text-transform: uppercase; margin-top: 20px">Sony Alpha 1 Full-frame Interchangeable Lens</p>
+				<a class="a" href=""><h2 class="button " style="text-align: center">$283.00</h2></a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony HT-AX7 Portable Theater System with 360 Spatial Sound Mapping.png" width="130px">
+				</a>
+			</div>
+				<p class="h1" style="margin-top: 20px; text-transform: uppercase">Sony HT-AX7 Portable Theater System with 360 Spatial Sound Mapping</p>
+				<a class="a" href=""><h2 class="button" style="text-align: center">$589.00</h2></a>
+<!--			write price here-->
+		</div>
+			<div class="box">
+			<div class="box_img">
+				<a href="">
+					<img src="../../Image_Page/sony/Sony FE 2.0x Teleconverter.png" style="max-width: 40%; margin-top: 34px">
+				</a>
+			</div>
+				<p class="h1" style="margin-top: 80px; text-transform: uppercase">Sony FE 2.0x Teleconverter </p>
+				<a class="a" href=""><h2 class="button" style="text-align: center">$3,875.00</h2></a>
+<!--			write price here-->
+		</div>
+		
+	</div>
+<!--	Panasonic-->
+	<div class="footer">
+		<div>
+			<h1>Contact</h1>
+					<p>#280E2, Street 245 Sangkat Tum Nob<br> Teuk, Khan Chamkarmon, Phnom Penh,<br> Cambodia.
+					Phone:​<br> 
+					+855 96 26 19 282 (Smart)<br>
+					Email: loeungsakhak@gmail.com<br>
+					</p>
+		</div>
+		<div>
+			<h1>Categories</h1>
+			<p>Air Conditioner & Air Cooler<br>
+				Washing Machine<br>
+				Refrigerator & Freezer<br>
+				Televisions & Projector<br>
+				Home appliances<br>
+				Kitchen Appliance<br>
+				Home Audio & Video<br>
+				Beauty & Health<br>
+				Phone & Accessories<br>
+				Digital Camera​ & Lens<br>
+				Computer & Accessories<br>
+				Other Products</p>
+		</div>
+		<div>
+			<h1>Page</h1>
+			<p>Store<br>
+				About Us<br>
+				Contact Us<br>
+				Terms and Conditions</p>
+		</div>
+		<div>
+			<h1>Account</h1>
+			<p>My Account<br>
+				Order History<br>
+				Wishlist<br>
+				Order Tracking</p>
+		</div>
+	</div>
+	
+</body>
+</html>
